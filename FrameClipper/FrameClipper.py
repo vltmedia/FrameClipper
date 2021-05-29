@@ -179,14 +179,14 @@ class FrameClipper:
                 self.ProcessFile(self.opt.dataroot)
             
         if self.opt.processType == 'consolidate':
-            self.ConsolidateImagesInDirectory(self.opt.dataroot)
+            self.ConsolidateImagesInDirectory()
             
         if self.opt.processType == 'prune':
-            self.PruneDirectory(self.opt.dataroot,self.opt.output,self.opt.shotcount,self.opt.extension)
+            self.PruneDirectory(n)
             # PruneDirectory(self.opt.dataroot,self.opt.dataroot+'/temp',self.opt.shotcount,self.opt.extension)
 
         if self.opt.processType == 'zip':
-            self.ZipDirectory(self.opt.dataroot,self.opt.output,self.opt.extension)
+            self.ZipDirectory()
             # ZipDirectory(self.opt.dataroot,self.opt.dataroot+'/temp',self.opt.extension)
             
 
