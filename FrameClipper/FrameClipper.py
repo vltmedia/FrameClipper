@@ -140,6 +140,7 @@ class FrameClipper:
         countt = 0
         usedlist = []
         prunelist = []
+        print('files count', len(files))
         print('count', self.opt.shotcount)
         for f in range(0,self.opt.shotcount):
             
