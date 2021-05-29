@@ -182,7 +182,7 @@ class FrameClipper:
             self.ConsolidateImagesInDirectory()
             
         if self.opt.processType == 'prune':
-            self.PruneDirectory(n)
+            self.PruneDirectory()
             # PruneDirectory(self.opt.dataroot,self.opt.dataroot+'/temp',self.opt.shotcount,self.opt.extension)
 
         if self.opt.processType == 'zip':
