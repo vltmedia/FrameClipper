@@ -136,7 +136,7 @@ class FrameClipper:
     def ZipDirectory(self):
         if not os.path.exists(self.opt.output):
             os.makedirs(self.opt.output)
-        files = self.GetImageFilesInFolder(self.opt.dataroot, self.opt.extension)
+        files = self.GetImageFilesInFolder()
         countt = 0
         usedlist = []
         prunelist = []
