@@ -98,7 +98,11 @@ class VidFrameClipper:
         
     def CropImage(self):
         Ycrop = 20
-        Xcrop = 100
+        # Xcrop = 100
+        Ycrop = abs((self.height / 2) - self.cropy )
+        Xcrop = abs((self.width/ 2) - self.cropx )
+        # Ycrop = abs(self.height - self.cropx)
+        # Xcrop = abs(self.width - self.cropy)
         if self.randomcrop == True:
             crops = self.GetRandomCrops()
             Ycrop = crops[1]
@@ -178,7 +182,14 @@ class VidFrameClipper:
             print('Writing Screenshot : ' + str(i) +'/'+str (count))
             self.SetFrame(self.framestart + i)
         # VidFrameClipper_.ShowFrame()
+            cleanfilename = os.path.splitext(os.path.basename(filepath))[0]
             cleanupdfilepath = filepath.replace('$F', str(self.currentFrame))
+            
+            if '.' in filepath:
+                ff = os.path.splitext(filepath)[0] + "/"+cleanfilename+"_" +  str(self.currentFrame) + '.png'
+                print(ff)
+                cleanupdfilepath = ff
+                
             self.SetOutput(cleanupdfilepath)
             try:
                 cv2.imwrite(cleanupdfilepath, self.frame)
